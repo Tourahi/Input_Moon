@@ -77,6 +77,11 @@ class Input
 
     insert @binds[action], key
 
+  bindArr: (bs = nil) =>
+    if bs == nil then return
+    for k, a in pairs bs
+      @bind k, a
+
   pressed: (action) =>
     if action
       for _, key in ipairs @binds[action]
@@ -138,7 +143,6 @@ class Input
               @sequences[sequenceKey] = nil
 
   down: (action = nil, interval = nil, delay = nil) =>
-
     if action and interval and delay
       for _, key in ipairs @binds[action]
         if @state[key] and not @prevState[key]
