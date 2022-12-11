@@ -220,7 +220,7 @@ class Input
      @state[buttonToKey[button]] = true
 
 
-  mousepressed: (x, y, button) =>
+  mousereleased: (x, y, button) =>
      @state[buttonToKey[button]] = false
      @repeatState[buttonToKey[button]] = false
 
